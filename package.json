@@ -12,7 +12,7 @@
     "promises-aplus-tests": "^2.1.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "promises-aplus-tests tests/aplus-adapter"
   },
   "repository": {
     "type": "git",
