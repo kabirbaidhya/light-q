@@ -1,0 +1,27 @@
+{
+  "name": "light-q",
+  "version": "1.0.0",
+  "description": "A lightweight javascript promise library inspired by Q",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jasmine": "^2.2.1",
+    "jasmine": "^2.4.1",
+    "jasmine-reporters": "^2.1.1",
+    "promises-aplus-tests": "^2.1.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabirbaidhya/light-q.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kabirbaidhya/light-q/issues"
+  },
+  "homepage": "https://github.com/kabirbaidhya/light-q#readme"
+}
