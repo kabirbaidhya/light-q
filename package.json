@@ -1,14 +1,13 @@
 {
   "name": "light-q",
   "version": "1.0.0",
-  "description": "A lightweight javascript promise library inspired by Q",
+  "description": "A lightweight javascript Promises/A+ library inspired by Q",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "babelify": "^7.2.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
-    "gulp-concat": "^2.6.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
@@ -17,8 +16,7 @@
     "jasmine-reporters": "^2.1.1",
     "promises-aplus-tests": "^2.1.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "gulp && promises-aplus-tests tests/aplus-adapter"
@@ -27,8 +25,8 @@
     "type": "git",
     "url": "git+https://github.com/kabirbaidhya/light-q.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kabir Baidhya <kabeer182010@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kabirbaidhya/light-q/issues"
   },

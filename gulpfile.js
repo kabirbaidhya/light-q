@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var babelify = require('babelify');
-var browserify = require('browserify');
 var babel = require('gulp-babel');
-var buffer = require('vinyl-buffer');
-var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
+var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var buffer = require('vinyl-buffer');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Build for Browsers
 gulp.task('build-standalone', function () {
