@@ -4,6 +4,8 @@ logs
 npm-debug.log*
 node_modules
 
+# Build & Distribution files
+dist/
 # Optional npm cache directory
 .npm
 .node_repl_history
