@@ -1,4 +1,7 @@
-Q.Promise = (function() {
+
+import * as util from './util/utils';
+
+var Promise = (function() {
 
     var callbacks = {
         fulfil:[],
@@ -6,38 +9,38 @@ Q.Promise = (function() {
         notify:[]
     };
 
-    function Promise() {
+    class Promise {
+        constructor() {
 
-    }
-
-    Promise.prototype.trigger = function(type, params) {
-        var handlers = callbacks[type];
-
-        for(var i in handlers) {
-            // Trigger the corresponding handler with parameters
-            handlers[i](params);
-        }
-    };
-
-    Promise.prototype.then = function(onFulfilled, onRejected, onNotified) {
-        if (isFunction(onFulfilled)) {
-            callbacks.fulfil.push(onFulfilled);
         }
 
-        if (isFunction(onRejected)) {
-            callbacks.reject.push(onRejected);
-        }
+        trigger (type, params) {
+            var handlers = callbacks[type];
 
-        if (isFunction(onNotified)) {
-            callbacks.notify.push(onNotified);
-        }
+            for(var i in handlers) {
+                // Trigger the corresponding handler with parameters
+                handlers[i](params);
+            }
+        };
 
-        return this;
-    };
+        then (onFulfilled, onRejected, onNotified) {
+            if (util.isFunction(onFulfilled)) {
+                callbacks.fulfil.push(onFulfilled);
+            }
 
-    function isFunction(thing) {
-        return (typeof(thing) === 'function');
+            if (util.isFunction(onRejected)) {
+                callbacks.reject.push(onRejected);
+            }
+
+            if (util.isFunction(onNotified)) {
+                callbacks.notify.push(onNotified);
+            }
+
+            return this;
+        };
     }
 
     return Promise;
 })();
+
+export {Promise};

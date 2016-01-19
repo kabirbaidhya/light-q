@@ -1,20 +1,23 @@
-Q.Deferred = (function() {
 
-    function Deferred() {
-        this.promise = new Q.Promise();
-    }
+import {Promise} from './Promise';
 
-    Deferred.prototype.resolve = function(value) {
-        p.trigger('fulfil', value);
+class Deferred {
+
+    constructor() {
+        this.promise = new Promise();
     };
 
-    Deferred.prototype.reject = function(reason) {
-        p.trigger('reject', reason);
+    resolve (value) {
+        this.promise.trigger('fulfil', value);
     };
 
-    Deferred.prototype.notify = function(value) {
-        p.trigger('notify', value);
+    reject (reason) {
+        this.promise.trigger('reject', reason);
     };
 
-    return Deferred;
-})();
+    notify (value) {
+        this.promise.trigger('notify', value);
+    };
+}
+
+export {Deferred};

@@ -1,20 +1,20 @@
+
+import {Deferred} from './Deferred';
+
 /**
  * A lightweight version of popular javascript Promise library Q
  *
  * @author Kabir Baidhya
  */
-;
-var Q = (function() {
-    /**
-     * Create a new Deferred Object
-     */
-    Q.defer = function() {
-        return new Q.Deferred();
+class Q {
+    static defer() {
+        return new Deferred();
     };
+}
 
-    return Q;
-})();
-
-if(window) {
+// For browser-based applications, make this globally accesible
+if (typeof(window) !== 'undefined') {
     window.Q = Q;
 }
+
+export {Q};
