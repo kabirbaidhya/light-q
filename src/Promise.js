@@ -2,41 +2,31 @@
 import * as util from './util/utils';
 
 var Promise = (function() {
-
-    var callbacks = {
-        fulfil:[],
-        reject:[],
-        notify:[]
-    };
+    var d;
 
     class Promise {
-        constructor() {
-
+        constructor(deferred) {
+            d = deferred;
         }
-
-        trigger (type, params) {
-            var handlers = callbacks[type];
-
-            for(var i in handlers) {
-                // Trigger the corresponding handler with parameters
-                handlers[i](params);
-            }
-        };
 
         then (onFulfilled, onRejected, onNotified) {
             if (util.isFunction(onFulfilled)) {
-                callbacks.fulfil.push(onFulfilled);
+                d.on('fulfil', onFulfilled);
             }
 
             if (util.isFunction(onRejected)) {
-                callbacks.reject.push(onRejected);
+                d.on('reject', onRejected);
             }
 
             if (util.isFunction(onNotified)) {
-                callbacks.notify.push(onNotified);
+                d.on('notify', onNotified);
             }
 
             return this;
+        };
+
+        isPending() {
+            return d.isPending;
         };
     }
 
