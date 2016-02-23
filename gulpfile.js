@@ -9,7 +9,7 @@ var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Build for Browsers
-gulp.task('build-standalone', function () {
+gulp.task('build:standalone', function () {
     var bundler = browserify({
         entries: 'src/Q.js',
         debug: true
@@ -29,10 +29,10 @@ gulp.task('build-standalone', function () {
 });
 
 // Build for NPM
-gulp.task('build-npm', function() {
+gulp.task('build:transpile', function() {
     gulp.src('src/**/*.js')
       .pipe(babel())
-      .pipe(gulp.dest('dist/node'));
+      .pipe(gulp.dest('lib'));
 });
 
-gulp.task('default', ['build-standalone', 'build-npm']);
+gulp.task('default', ['build:standalone', 'build:transpile']);
