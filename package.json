@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-jasmine": "^2.2.1",
@@ -19,7 +20,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "gulp --silent",
     "prepublish": "npm run build",
     "test": "gulp && promises-aplus-tests tests/aplus-adapter"
   },
