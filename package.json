@@ -1,6 +1,6 @@
 {
   "name": "light-q",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "A lightweight javascript Promises/A+ library",
   "main": "index.js",
   "dependencies": {},
